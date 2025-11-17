@@ -163,11 +163,11 @@ class GUISample(parent: MainActivity) : View.OnClickListener, GUISampleListener,
     identifyButton?.text = activity.getString(R.string.WorkIdentify)
         cancelButton.text = activity.getString(R.string.CancelBtn)
         endButton.text = activity.getString(R.string.ExitBtn)
-        
+
         // Clear user ID input
         userIdInput.setText("")
         hiddenUserIdInput.setText("")
-        
+
         // Add text change listener to update button states
         userIdInput.addTextChangedListener(object : android.text.TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -374,13 +374,13 @@ class GUISample(parent: MainActivity) : View.OnClickListener, GUISampleListener,
             setGuideMessage(activity.getString(R.string.enter_user_id))
             return
         }
-        
+
         // Check for duplicate ID
         if (service.Ps_Sample_Apl_Java_RegisteredId(userId)) {
             setGuideMessage(activity.getString(R.string.duplicate_id_error))
             return
         }
-        
+
         setButtonEnable(false)
         resetPosture(Status.NONE)
 
@@ -400,7 +400,7 @@ class GUISample(parent: MainActivity) : View.OnClickListener, GUISampleListener,
             setGuideMessage(activity.getString(R.string.enter_user_id))
             return
         }
-        
+
         setButtonEnable(false)
         resetPosture(Status.NONE)
 
@@ -452,12 +452,12 @@ class GUISample(parent: MainActivity) : View.OnClickListener, GUISampleListener,
             }
         }.start()
     }
-    
+
     private fun listUsersClickEvent() {
         try {
             service.Ps_Sample_Apl_Java_RefreshIdList()
             val userList = service.getIdList()
-            
+
             if (userList.isEmpty()) {
                 setGuideMessage(activity.getString(R.string.no_users_registered))
             } else {
@@ -471,14 +471,14 @@ class GUISample(parent: MainActivity) : View.OnClickListener, GUISampleListener,
             setGuideMessage(activity.getString(R.string.error_listing_users))
         }
     }
-    
+
     private fun deleteUserClickEvent() {
         val userId = userIdInput.text.toString().trim()
         if (userId.isEmpty()) {
             setGuideMessage(activity.getString(R.string.delete_user_prompt))
             return
         }
-        
+
         try {
             service.Ps_Sample_Apl_Java_DeleteId(userId)
             setGuideMessage(activity.getString(R.string.delete_user_success, userId))
@@ -510,7 +510,7 @@ class GUISample(parent: MainActivity) : View.OnClickListener, GUISampleListener,
         } else {
             false
         }
-        
+
         enrollButton.isEnabled = flag
         verifyButton.isEnabled = flag && isUserRegistered
         cancelButton.isEnabled = !flag

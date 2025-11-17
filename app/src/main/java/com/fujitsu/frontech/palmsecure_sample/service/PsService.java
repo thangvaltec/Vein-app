@@ -67,14 +67,14 @@ public class PsService {
 	private long mUsingSensorExtKind = 0;
 
 	public byte[] silhouette = null;
-	
+
 	/**
 	 * Get the current data type being used.
 	 */
 	public int getUsingDataType() {
 		return mUsingDataType;
 	}
-	
+
 	/**
 	 * Get the current sensor type being used.
 	 */
@@ -244,7 +244,7 @@ public class PsService {
 			}
 			else {
 				// Get verified user ID from result
-				String verifiedUserId = result.userId != null && !result.userId.isEmpty() ? 
+				String verifiedUserId = result.userId != null && !result.userId.isEmpty() ?
 					result.userId.get(0) : "Unknown";
 				s = String.format("%s - User ID: %s",
 					mActivity.getResources().getString(R.string.VerifyOk),
@@ -291,7 +291,7 @@ public class PsService {
 				guiListener.guiSampleNotifyResult(Result.SUCCESSFUL);
 			}
 			break;
-			
+
 		case MSG_RESPONSE_IDENTIFY:
 			result = PsServiceHelper.getBundleToPsThreadResult(response);
 			if (cancelFlg) {
@@ -487,7 +487,7 @@ public class PsService {
 		} else {
 			lpvParamData.value = (int)PalmSecureConstant.JAVA_PvAPI_PRE_PROFILE_G_EXTENDED_MODE_2;
 		}
-		
+
 		try {
 			stResult.result = palmsecureIf.JAVA_PvAPI_PreSetProfile(
 					uiFlag,
@@ -713,7 +713,7 @@ public class PsService {
 			}
 		}
 	}
-	
+
 	public void Ps_Sample_Apl_Java_RefreshIdList() {
 		if (BuildConfig.DEBUG)
 			Log.d(TAG, "Ps_Sample_Apl_Java_RefreshIdList");
