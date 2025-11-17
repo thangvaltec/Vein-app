@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- User ID Input Section for Landscape -->
+    <LinearLayout
+        android:id="@+id/userInputLayout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User ID:"
+            android:textSize="10sp"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/userIdInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter User ID"
+            android:textSize="10sp"
+            android:maxLength="20"
+            android:inputType="text"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/listUsersButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="List Users"
+            android:textSize="8sp"
+            android:layout_marginBottom="4dp" />
+
+        <Button
+            android:id="@+id/deleteUserButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete User"
+            android:textSize="8sp"
+            android:layout_marginBottom="8dp" />
+    </LinearLayout>
+
+    <!-- Main Button Layout for Landscape -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userInputLayout">
+
+        <Button
+            android:id="@+id/enrollButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="1dp"
+            android:text="Enroll"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/verifyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Verify"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/endButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="End"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <ImageView
+            android:id="@+id/backView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideMessage"
+            app:layout_constraintDimensionRatio="1:1" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="@+id/backView"
+            app:layout_constraintStart_toStartOf="@+id/backView"
+            app:layout_constraintTop_toTopOf="@+id/backView"
+            app:layout_constraintBottom_toBottomOf="@+id/backView"
+            app:layout_constraintDimensionRatio="1:1" />
+
+        <TextView
+            android:id="@+id/guideMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center_horizontal"
+            android:lines="2"
+            android:singleLine="false"
+            android:text="Guide Message"
+            android:textAlignment="gravity"
+            android:textColor="#FF7700"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout">
+
+        <ImageView
+            android:id="@+id/messageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/black"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:id="@+id/progressMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="center_horizontal"
+            android:lines="2"
+            android:text="Progress Message"
+            android:textAlignment="textStart"
+            android:textColor="#00A999"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

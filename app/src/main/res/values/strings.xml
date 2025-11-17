@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PalmSecure Sample</string>
+
+    <!-- User ID Section -->
+    <string name="user_id_label">User ID:</string>
+    <string name="user_id_hint">Enter User ID</string>
+    <string name="list_users_button">List Users</string>
+    <string name="delete_user_button">Delete User</string>
+
+    <!-- User List Dialog -->
+    <string name="user_list_title">User List</string>
+    <string name="select_button">Select</string>
+    <string name="close_button">Close</string>
+    <string name="no_users_registered">No users registered</string>
+    <string name="error_listing_users">Error listing users</string>
+    <string name="enter_user_id">Please enter User ID</string>
+    <string name="duplicate_id_error">User ID already registered</string>
+    <string name="enrolling_user">Enrolling user: %s</string>
+    <string name="delete_user_prompt">Please enter a User ID to delete</string>
+    <string name="delete_user_success">User \'%s\' deleted successfully</string>
+    <string name="delete_user_error">Error deleting user: %s</string>
+
+    <string name="Title">PalmSecure Sample Application</string>
+    <string name="EnrollBtn">Enroll</string>
+    <string name="VerifyBtn">Verify</string>
+    <string name="CancelBtn">Cancel</string>
+    <string name="ExitBtn">End</string>
+
+    <string name="NOTIFY_CAP_GUID_BADIMAGE">Please move your hand away from the sensor.</string>
+    <string name="NOTIFY_CAP_GUID_MOVING">Don\'t move your hand.</string>
+    <string name="NOTIFY_CAP_GUID_LESSINFO">With your fingers spread, place your hand at the correct position again.</string>
+    <string name="NOTIFY_CAP_GUID_RIGHT">Move your hand slightly to the left.</string>
+    <string name="NOTIFY_CAP_GUID_LEFT">Move your hand slightly to the right.</string>
+    <string name="NOTIFY_CAP_GUID_DOWN">Move your hand slightly away from you.</string>
+    <string name="NOTIFY_CAP_GUID_UP">Move your hand slightly toward you.</string>
+    <string name="NOTIFY_CAP_GUID_FAR">Your hand is too far from the sensor.</string>
+    <string name="NOTIFY_CAP_GUID_NEAR">Place your hand slightly further from the sensor.</string>
+    <string name="NOTIFY_CAP_GUID_CAPTURING">Now saving&#8230;Please don\'t move your hand.</string>
+    <string name="NOTIFY_CAP_GUID_PITCH_DOWN">Lay your hand flat.</string>
+    <string name="NOTIFY_CAP_GUID_PITCH_UP">Lay your hand flat.</string>
+    <string name="NOTIFY_CAP_GUID_ROLL_RIGHT">Lay your hand flat.</string>
+    <string name="NOTIFY_CAP_GUID_ROLL_LEFT">Lay your hand flat.</string>
+    <string name="NOTIFY_CAP_GUID_YAW_RIGHT">Place your hand parallel to the sensor.</string>
+    <string name="NOTIFY_CAP_GUID_YAW_LEFT">Place your hand parallel to the sensor.</string>
+    <string name="NOTIFY_CAP_GUID_ADJUST_LIGHT">Trying to capture again. Please don\'t move your hand.</string>
+    <string name="NOTIFY_CAP_GUID_ADJUST_NG">Trying to capture again. Please don\'t move your hand.</string>
+    <string name="NOTIFY_CAP_GUID_PHASE_END">Now authenticating&#8230;</string>
+    <string name="NOTIFY_CAP_GUID_NO_HANDS">Open your fingers and place your hand horizontally.</string>
+    <string name="NOTIFY_CAP_GUID_ROUND">Please flatten the hand, and bring it closer to the sensor a little.</string>
+    <string name="NOTIFY_CAP_GUID_START">Start capturing</string>
+    <string name="NOTIFY_CAP_GUID_CAPTURING_END">End capturing</string>
+
+    <string name="RetryTransaction">Please re-place a hand for a retry.</string>
+    <string name="EnrollmentTest">Please re-place a hand for enrollment test.</string>
+
+    <string name="WorkEnrollStart">Enrollment</string>
+    <string name="WorkEnroll">Enrollment ( %d / 2 )</string>
+    <string name="WorkEnroll3">Enrollment ( %d / 3 )</string>
+    <string name="WorkEnrollTest">Enrollment Test ( %d / 1 )</string>
+    <string name="WorkIdentifyStart">Identification</string>
+    <string name="WorkIdentify">Identification</string>
+    <string name="WorkVerifyStart">Verification</string>
+    <string name="WorkVerify">Verification</string>
+
+    <string name="EnrollOk">You have successfully been enrolled.</string>
+    <string name="EnrollNg">Enrollment has failed.</string>
+    <string name="EnrollRetry">You have successfully been enrolled.\nBut quality is low.</string>
+    <string name="VerifyOk">You are verified.</string>
+    <string name="VerifyNg">You are not %1$s.</string>
+    <string name="IdentifyOk">You are %s.</string>
+    <string name="IdentifyNg">Invalid credentials.</string>
+    <string name="EnrollCancel">The operation has been canceled.</string>
+    <string name="VerifyCancel">The operation has been canceled.</string>
+    <string name="IdentifyCancel">The operation has been canceled.</string>
+
+    <string name="LibErrorTitle">PalmSecure Library Error.</string>
+    <string name="LibErrorLevel">Error Level </string>
+    <string name="LibErrorCode">Error Code  </string>
+    <string name="LibErrorDetail">Error Detail</string>
+    <string name="AplErrorTitle">Sample Application Error</string>
+    <string name="AplErrorBmpSave">Failed to save the silhouette log.</string>
+    <string name="AplErrorBmpDirOpen">Failed to access the silhouette directory.</string>
+    <string name="AplErrorLogDirOpen">Failed to access the log directory.</string>
+    <string name="AplErrorLogFileOpen">Failed to open the log file.</string>
+    <string name="AplErrorLogFileWrite">Failed to write the log file.</string>
+    <string name="AplErrorFileDirOpen">Failed to access the authentication data directory.</string>
+    <string name="AplErrorFileOpen">Failed to open the authentication data file.</string>
+    <string name="AplErrorFileWrite">Failed to write the authentication data file.</string>
+    <string name="AplErrorFileDelete">Failed to delete the authentication data file.</string>
+    <string name="AplErrorDataFileNotFound">The authentication data file cannot be found.</string>
+    <string name="AplErrorNoData">The authentication data file cannot be found.</string>
+    <string name="AplErrorGuideBmpLoad">Failed to read the BMP guidance image.</string>
+    <string name="AplErrorsilhouetteLoad">Failed to read the silhouette image.</string>
+    <string name="AplErrorSensorNothing">Failed to connect to sensor.</string>
+    <string name="AplErrorSystemError">An internal error occurred.\nApplication will abort.</string>
+
+    <!-- Capture related strings -->
+    <string name="capture_button">Capture</string>
+    <string name="capture_success">Capture completed</string>
+    <string name="capture_failed">Capture failed</string>
+    <string name="saving_image">Saving image...</string>
+    <string name="save_success">Image saved: %s</string>
+    <string name="save_failed">Failed to save image</string>
+
+</resources>

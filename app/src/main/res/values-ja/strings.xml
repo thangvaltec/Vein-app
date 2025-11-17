@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">手のひら静脈認証</string>
+
+    <!-- User ID Section -->
+    <string name="user_id_label">ユーザーID:</string>
+    <string name="user_id_hint">IDを入力</string>
+    <string name="list_users_button">一覧表示</string>
+    <string name="delete_user_button">削除</string>
+
+    <!-- User List Dialog -->
+    <string name="user_list_title">ユーザー一覧</string>
+    <string name="select_button">選択</string>
+    <string name="close_button">閉じる</string>
+    <string name="no_users_registered">登録済みユーザーがいません</string>
+    <string name="error_listing_users">ユーザー一覧の取得に失敗しました</string>
+    <string name="enter_user_id">ユーザーIDを入力してください</string>
+    <string name="duplicate_id_error">入力されたIDは登録済みです</string>
+    <string name="enrolling_user">ユーザー %s を登録中</string>
+    <string name="delete_user_prompt">削除するユーザーIDを入力してください</string>
+    <string name="delete_user_success">ユーザー \'%s\' を削除しました</string>
+    <string name="delete_user_error">ユーザーの削除に失敗しました: %s</string>
+
+    <string name="Title">サンプルアプリケーション</string>
+    <string name="EnrollBtn">登録</string>
+    <string name="VerifyBtn">照合</string>
+    <string name="CancelBtn">中断</string>
+    <string name="ExitBtn">終了</string>
+
+    <string name="NOTIFY_CAP_GUID_BADIMAGE">いったん手を離してください。</string>
+    <string name="NOTIFY_CAP_GUID_MOVING">手を止めてください。</string>
+    <string name="NOTIFY_CAP_GUID_LESSINFO">指を開いて、正しい位置にかざし直してください。</string>
+    <string name="NOTIFY_CAP_GUID_RIGHT">手を少し左にずらしてください。</string>
+    <string name="NOTIFY_CAP_GUID_LEFT">手を少し右にずらしてください。</string>
+    <string name="NOTIFY_CAP_GUID_DOWN">手を少し奥にずらしてください。</string>
+    <string name="NOTIFY_CAP_GUID_UP">手を少し手前にずらしてください。</string>
+    <string name="NOTIFY_CAP_GUID_FAR">手を近づけてください。</string>
+    <string name="NOTIFY_CAP_GUID_NEAR">手を少し遠ざけてください。</string>
+    <string name="NOTIFY_CAP_GUID_CAPTURING">撮影中です。</string>
+    <string name="NOTIFY_CAP_GUID_PITCH_DOWN">手を水平にしてください。</string>
+    <string name="NOTIFY_CAP_GUID_PITCH_UP">手を水平にしてください。</string>
+    <string name="NOTIFY_CAP_GUID_ROLL_RIGHT">手を水平にしてください。</string>
+    <string name="NOTIFY_CAP_GUID_ROLL_LEFT">手を水平にしてください。</string>
+    <string name="NOTIFY_CAP_GUID_YAW_RIGHT">手をセンサーの向きにあわせてください。</string>
+    <string name="NOTIFY_CAP_GUID_YAW_LEFT">手をセンサーの向きにあわせてください。</string>
+    <string name="NOTIFY_CAP_GUID_ADJUST_LIGHT">再撮影します。手を止めてください。</string>
+    <string name="NOTIFY_CAP_GUID_ADJUST_NG">再撮影します。手を止めてください。</string>
+    <string name="NOTIFY_CAP_GUID_PHASE_END">認証処理中です。</string>
+    <string name="NOTIFY_CAP_GUID_NO_HANDS">指を開いて水平に手をかざしてください。</string>
+    <string name="NOTIFY_CAP_GUID_ROUND">手を平にして、少し近づけてください</string>
+    <string name="NOTIFY_CAP_GUID_START">撮影誘導を開始します。</string>
+    <string name="NOTIFY_CAP_GUID_CAPTURING_END">撮影完了しました。</string>
+
+    <string name="RetryTransaction">再度処理を行います。手をかざし直してください。</string>
+    <string name="EnrollmentTest">確認認証のため、手をかざし直してください。</string>
+
+    <string name="WorkEnrollStart">登録</string>
+    <string name="WorkEnroll">登録 ( %d / 2 )</string>
+    <string name="WorkEnroll3">登録 ( %d / 3 )</string>
+    <string name="WorkEnrollTest">確認認証 ( %d / 1 )</string>
+    <string name="WorkIdentifyStart">識別</string>
+    <string name="WorkIdentify">識別</string>
+    <string name="WorkVerifyStart">照合</string>
+    <string name="WorkVerify">照合</string>
+
+    <string name="EnrollOk">登録が完了しました。</string>
+    <string name="EnrollNg">登録されませんでした。</string>
+    <string name="EnrollRetry">登録が完了しました。\n登録状態があまりよくありません。削除後、再登録をお勧めします。</string>
+    <string name="VerifyOk">認証されました。</string>
+    <string name="VerifyNg">あなたは%1$sではありません。</string>
+    <string name="IdentifyOk">あなたは%sです。</string>
+    <string name="IdentifyNg">一致する登録データがありませんでした。</string>
+    <string name="EnrollCancel">処理を中断しました。</string>
+    <string name="VerifyCancel">処理を中断しました。</string>
+    <string name="IdentifyCancel">処理を中断しました。</string>
+
+    <string name="LibErrorTitle">認証ライブラリエラー</string>
+    <string name="LibErrorLevel">エラーレベル</string>
+    <string name="LibErrorCode">エラー分類　</string>
+    <string name="LibErrorDetail">エラー詳細　</string>
+    <string name="AplErrorTitle">サンプルアプリケーションエラー</string>
+    <string name="AplErrorBmpSave">シルエットログの保存に失敗しました。</string>
+    <string name="AplErrorBmpDirOpen">シルエットログ格納ディレクトリのアクセスに失敗しました。</string>
+    <string name="AplErrorLogDirOpen">ログディレクトリのアクセスに失敗しました。</string>
+    <string name="AplErrorLogFileOpen">ログファイルのオープンに失敗しました。</string>
+    <string name="AplErrorLogFileWrite">ログファイルの書き込みに失敗しました。</string>
+    <string name="AplErrorFileDirOpen">認証ファイル格納ディレクトリのアクセスに失敗しました。</string>
+    <string name="AplErrorFileOpen">認証ファイルのオープンに失敗しました。</string>
+    <string name="AplErrorFileWrite">認証ファイルの書き込みに失敗しました。</string>
+    <string name="AplErrorFileDelete">認証ファイルの削除に失敗しました。</string>
+    <string name="AplErrorDataFileNotFound">認証ファイルが見つかりませんでした。</string>
+    <string name="AplErrorNoData">認証ファイルが見つかりませんでした。</string>
+    <string name="AplErrorGuideBmpLoad">ガイダンスBMPの読み込みに失敗しました。</string>
+    <string name="AplErrorsilhouetteLoad">シルエットイメージの表示に失敗しました。</string>
+    <string name="AplErrorSensorNothing">センサの接続に失敗しました。 </string>
+    <string name="AplErrorSystemError">内部エラーが発生しました。\nアプリケーションを終了します。</string>
+
+    <!-- Capture related strings -->
+    <string name="capture_button">撮影</string>
+    <string name="capture_success">撮影が完了しました</string>
+    <string name="capture_failed">撮影に失敗しました</string>
+    <string name="saving_image">画像を保存中...</string>
+    <string name="save_success">画像を保存しました: %s</string>
+    <string name="save_failed">画像の保存に失敗しました</string>
+
+</resources>
