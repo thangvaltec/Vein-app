@@ -6,6 +6,7 @@ valtec aiit busho
 */
 
 package com.fujitsu.frontech.palmsecure_gui_sample
+//package com.fujitsu.frontech.palmsecure_gui_sample
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
