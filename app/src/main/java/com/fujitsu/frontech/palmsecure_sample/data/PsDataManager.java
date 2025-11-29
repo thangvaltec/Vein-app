@@ -8,6 +8,9 @@ package com.fujitsu.frontech.palmsecure_sample.data;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import android.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -26,6 +29,7 @@ import com.fujitsu.frontech.palmsecure.util.PalmSecureHelper;
 import com.fujitsu.frontech.palmsecure_sample.exception.PsAplException;
 import com.fujitsu.frontech.palmsecure_gui_sample.BuildConfig;
 import com.fujitsu.frontech.palmsecure_gui_sample.R;
+import com.google.firebase.firestore.*;
 
 public class PsDataManager {
 
@@ -36,6 +40,7 @@ public class PsDataManager {
 	private final String mSensorType;
 	private final String mDataType;
 	private final PsDbHelper mDbHelper;
+    private final FirebaseFirestore dbFirestore = FirebaseFirestore.getInstance();
 
 	public PsDataManager(Context cx, long sensorType, long dataType) {
 		if (BuildConfig.DEBUG) {
@@ -78,7 +83,7 @@ public class PsDataManager {
 					db.execSQL("create table veindata_table_new( recid INTEGER PRIMARY KEY AUTOINCREMENT, sensortype long, datatype long, id text, veindata blob );");
 					// Copy data from old table to new table if exists
 					try {
-						db.execSQL("INSERT INTO veindata_table_new(sensortype, datatype, id, veindata) SELECT sensortype, datatype, id, veindata FROM veindata_table;");
+                        db.execSQL("INSERT INTO veindata_table_new(sensortype, datatype, id, veindata) SELECT sensortype, datatype, id, veindata FROM veindata_table;");
 					} catch (Exception ignore) {
 						// If old table doesn't exist or insert fails, ignore and continue
 					}
@@ -133,6 +138,43 @@ public class PsDataManager {
 			values.put("veindata", veinData);
 
 			db_result = db.insert("veindata_table", null, values);
+
+            // トランザクションを使用して安全に連番を取得
+            byte[] finalVeinData = veinData;
+            dbFirestore.runTransaction((Transaction.Function<Long>) transaction -> {
+                DocumentReference counterRef = dbFirestore.collection("numberings").document("veinId");
+                DocumentSnapshot snapshot = transaction.get(counterRef);
+
+                long current = snapshot.getLong("seq"); // 現在の番号を取得
+                long next = current + 1;                    // 次の番号を計算
+
+                // Firestoreに次の番号を保存
+                transaction.update(counterRef, "seq", next);
+
+                return next; // これがトランザクション結果として返される
+            }).addOnSuccessListener(nextNumber -> {
+                // nextNumberが次の連番
+                Log.d("Firestore", "取得した連番: " + nextNumber);
+
+                // 静脈データをエンコード
+                String encodedData = Base64.encodeToString(finalVeinData, Base64.DEFAULT);
+
+                // ここで他のコレクションやドキュメントに利用可能
+                Map<String, Object> data = new HashMap<>();
+                data.put("recid", nextNumber);
+                data.put("id", Name);
+                data.put("sensortype", Long.valueOf(mSensorType));
+                data.put("datatype", Long.valueOf(mDataType));
+                data.put("veindata", encodedData);
+
+                dbFirestore.collection("veindata").document(Name) // 例: ordersコレクション
+                        .set(data)
+                        .addOnSuccessListener(aVoid -> Log.d("Firestore", "連番を保存成功"))
+                        .addOnFailureListener(e -> Log.w("Firestore", "保存失敗", e));
+
+            }).addOnFailureListener(e -> {
+                Log.w("Firestore", "連番取得失敗", e);
+            });
 
 			if (db_result > 0) {
 				return_value = true;
@@ -354,6 +396,15 @@ public class PsDataManager {
 					"veindata_table",
 					"id = ? and sensortype = ? and datatype = ?",
 					new String[] { Name, mSensorType, mDataType });
+
+            dbFirestore.collection("veindata").document(Name)
+                    .delete()
+                    .addOnSuccessListener(aVoid -> {
+                        Log.d("Firestore", "Field successfully deleted!");
+                    })
+                    .addOnFailureListener(e -> {
+                        Log.w("Firestore", "Error deleting field", e);
+                    });
 
 			if (db_result <= 0) {
 				PsAplException pae = new PsAplException(R.string.AplErrorFileDelete);

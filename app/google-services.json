@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "322944960758",
+    "project_id": "vein-data-management",
+    "storage_bucket": "vein-data-management.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322944960758:android:feee1bcc398ba1246bc4d7",
+        "android_client_info": {
+          "package_name": "com.fujitsu.frontech.palmsecure_gui_sample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3O1pAmKN66RQPE2777wPNujH80bnhR3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
