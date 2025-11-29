@@ -1,5 +1,6 @@
 /*
 * GUISample.kt
+valtec aiit busho
 *
 *	All Rights Reserved, Copyright(c) FUJITSU FRONTECH LIMITED 2025
 */
